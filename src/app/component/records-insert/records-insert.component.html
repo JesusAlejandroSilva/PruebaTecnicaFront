@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Create Records</h2>
+    <div class="form-row" **ngIf="showMsg">
+        <div class="alert alert-{{type}} cold-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+    <form #RegisterForm="ngForm">
+        <div class="form-row">
+          <div class="col-md-3">
+            <label>ID: </label>
+            <input type="text" id="ID" name="ID" placeholder="ID"
+            class="form-control" #ID [(ngModel)]="register.ID" readonly/>
+          </div>
+          <div class="col-md-3">
+            <label>Deportista: </label>
+            <input type="text" id="Nombres" name="Title" placeholder="Enther the Nombres"
+            class="form-control" #Nombres [(ngModel)]="register.Id_Deportista"/>
+          </div>
+          <div class="col-md-3">
+            <label>Modalidad: </label>
+            <br>
+            <select id="opciones">
+              <option [(ngModel)]="register.Modalidad">Arranque</option>
+              <option [(ngModel)]="register.Modalidad">Envión</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label>Peso: </label>
+            <input type="number" id="Peso" name="Peso" placeholder="Enther the Peso"
+            class="form-control" #Peso [(ngModel)]="register.Peso"/>
+          </div>
+        </div>
+
+        <br>
+        <button class="btn btn-outline-primary btn-sm" (click)="save()">Save</button>
+        <a class ="btn btn-outline-primary btn-sm" [routerLink]="['/athletes-list']">Back</a>
+    </form>
+</div>

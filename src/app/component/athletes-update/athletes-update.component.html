@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Create Athletes</h2>
+    <div class="form-row" **ngIf="showMsg">
+        <div class="alert alert-{{type}} cold-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+    <form #athletesForm="ngForm">
+        <div class="form-row">
+          <div class="col-md-3">
+            <label>ID: </label>
+            <input type="text" id="ID" name="ID" placeholder="ID"
+            class="form-control" #ID [(ngModel)]="athletes.ID" readonly/>
+          </div>
+          <div class="col-md-3">
+            <label>Nombres: </label>
+            <input type="text" id="Nombres" name="Title" placeholder="Enther the Nombres"
+            class="form-control" #Nombres [(ngModel)]="athletes.Nombres"/>
+          </div>
+          <div class="col-md-3">
+            <label>Apellidos: </label>
+            <input type="text" id="Apellidos" name="Apellidos" placeholder="Enther the Apellidos"
+            class="form-control" #Apellidos [(ngModel)]="athletes.Apellidos"/>
+          </div>
+          <div class="col-md-3">
+            <label>Pais: </label>
+            <input type="number" id="Id_Pais" name="Id_Pais" placeholder="Enther the IdPais"
+            class="form-control" #Id_Pais [(ngModel)]="athletes.Id_Pais"/>
+          </div>
+        </div>
+
+        <br>
+        <button class="btn btn-outline-primary btn-sm" (click)="edit()">Edit</button>
+        <a class ="btn btn-outline-primary btn-sm" [routerLink]="['/athletes-list']">Back</a>
+    </form>
+</div>
+
